@@ -557,8 +557,8 @@ $("subtitle").textContent = C.副標題 || "";
 $("foot").textContent = "◆ " + C.品牌名稱 + "・" + (C.頁尾 || "") + " ◆";
 (function(){ // 老師介紹＋照片＋承諾（三者都空白就不顯示）
   var vow = (C.老師承諾 || []).filter(Boolean);
-  if (!C.老師介紹 && !C.老師照片 && !vow.length) return;
-  var h = '<div class="tch">' + (C.老師照片 ? '<img src="' + esc(C.老師照片) + '" alt="' + esc(C.品牌名稱) + ' 老師">' : "") +
+  if (!C.老師介紹 && !vow.length) return;
+  var h = '<div class="tch">' + 
           '<div class="txt">' + rich(C.老師介紹 || "", true) + "</div></div>" +
           (vow.length ? '<ul class="promise">' + vow.map(function(v){ return "<li>" + esc(v) + "</li>"; }).join("") + "</ul>" : "");
   $("teacher0").innerHTML = $("teacher").innerHTML = h;
